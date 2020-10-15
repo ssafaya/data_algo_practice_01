@@ -59,7 +59,7 @@ public class Stack {
         System.out.println("Program executed successfully.");
     }
 
-    private void push(int input) {
+    public void push(int input) {
         if(isFull()) {
             System.out.println("Stack is full. Cannot insert: " + input);
             return;
@@ -69,7 +69,7 @@ public class Stack {
         System.out.println("Pushed into stack : " + input);
     }
 
-    private void pop() {
+    public void pop() {
         if(isEmpty()) {
             System.out.println("Stack is empty. Cannot pop.");
             return;
@@ -80,15 +80,15 @@ public class Stack {
         System.out.println("Popped from stack : " + data);
     }
 
-    private boolean isFull() {
+    public boolean isFull() {
         return index == capacity - 1;
     }
 
-    private boolean isEmpty() {
+    public boolean isEmpty() {
         return index == -1;
     }
 
-    private int peek() {
+    public int peek() {
         if(isEmpty()) {
             System.out.println("Stack is empty. Cannot peek.");
             return -1;
