@@ -1,0 +1,38 @@
+
+    // Complete the plusMinus function below.
+    static void plusMinus(int[] arr) {
+        int size = arr.length;
+        if(size == 0) {
+            return;
+        }
+        int pos = 0;
+        int neg = 0;
+        int zer = 0;
+        for(int i = 0; i < size; i++) {
+            if(arr[i] > 0) {
+                pos++;
+            } else if(arr[i] < 0) {
+                neg++;
+            } else {
+                zer++;
+            }
+        }
+        //float posRatio = (float)pos / size;
+        //float negRatio = (float)neg / size;
+        //float zerRatio = (float)zer / size;
+
+        BigDecimal posVal = new BigDecimal(pos);
+        posVal.setScale(6);
+        BigDecimal negVal = new BigDecimal(neg);
+        negVal.setScale(6);
+        BigDecimal zerVal = new BigDecimal(zer);
+        zerVal.setScale(6);
+
+        posVal = posVal.divide(new BigDecimal(size));
+        negVal = negVal.divide(new BigDecimal(size));
+        zerVal = zerVal.divide(new BigDecimal(size));
+
+        System.out.println(posVal);
+        System.out.println(negVal);
+        System.out.println(zerVal);
+    }
